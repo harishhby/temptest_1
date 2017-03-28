@@ -64,7 +64,13 @@ public class BaseUtil {
 			System.setProperty("webdriver.gecko.driver",
 					GetPath.getBasePath() + File.separator+"Drivers"
 							+File.separator+ "geckodriver.exe");			
-			driver = new FirefoxDriver();
+			//driver = new FirefoxDriver();
+
+			DesiredCapabilities cap=DesiredCapabilities.firefox();
+			cap.setCapability("version", "");
+			cap.setCapability("platform", "LINUX");
+			driver=new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),cap);
+
 
 		} else if (browser.equalsIgnoreCase("chrome")) {
 			DesiredCapabilities handlSSLErr = DesiredCapabilities.chrome ();       
