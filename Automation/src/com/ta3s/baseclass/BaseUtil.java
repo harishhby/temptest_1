@@ -69,7 +69,7 @@ public class BaseUtil {
 			DesiredCapabilities cap=DesiredCapabilities.firefox();
 			cap.setCapability("version", "");
 			cap.setCapability("platform", "LINUX");
-			driver=new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),cap);
+			driver=new RemoteWebDriver(new URL("http://172.17.0.2:4444/wd/hub"),cap);
 
 
 		} else if (browser.equalsIgnoreCase("chrome")) {
