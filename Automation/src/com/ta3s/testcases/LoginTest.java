@@ -34,7 +34,7 @@ public class LoginTest extends BaseUtil {
 
 	Ta3sLoginPage signin = new Ta3sLoginPage();
 
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void setUp() throws IOException, InterruptedException { 
 
 		ATUReports.setWebDriver(driver);

@@ -56,7 +56,7 @@ public class BaseUtil {
 
 
 
-	@BeforeSuite
+	@BeforeSuite(alwaysRun = true)
 	public void initiate() throws IOException, AWTException, ATUTestRecorderException {	
 
 		String browser = readConfigFile("browser");
@@ -69,7 +69,7 @@ public class BaseUtil {
 			DesiredCapabilities cap=DesiredCapabilities.firefox();
 			cap.setCapability("version", "");
 			cap.setCapability("platform", "LINUX");
-			driver=new RemoteWebDriver(new URL("http://172.17.0.4:4444/wd/hub"),cap);
+			driver=new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),cap);
 
 
 		} else if (browser.equalsIgnoreCase("chrome")) {
